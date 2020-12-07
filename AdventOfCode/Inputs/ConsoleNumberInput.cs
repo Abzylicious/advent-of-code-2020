@@ -2,6 +2,8 @@
 
 namespace AdventOfCode.Inputs
 {
+    public interface IConsoleNumberInput : IInput<int> { }
+
     public class ConsoleNumberInput : IConsoleNumberInput
     {
         public int GetInput()

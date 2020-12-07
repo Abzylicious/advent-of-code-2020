@@ -5,6 +5,11 @@ using System.Linq;
 
 namespace AdventOfCode.Services
 {
+    public interface ISolveService
+    {
+        IEnumerable<string> GetSolutions(int day);
+    }
+
     public class SolveService : ISolveService
     {
         private readonly IServiceProvider _services;

@@ -6,12 +6,12 @@ using System.Linq;
 
 namespace AdventOfCode
 {
-    public class AdventOfCode
+    public class AdventOfCodeRunner
     {
         private readonly ISolveService _solveService;
-        private readonly IInput<int> _puzzleDayInput;
+        private readonly IPuzzleDayInput _puzzleDayInput;
 
-        public AdventOfCode(ISolveService solveService, IPuzzleDayInput puzzleDayInput) =>
+        public AdventOfCodeRunner(ISolveService solveService, IPuzzleDayInput puzzleDayInput) =>
             (_solveService, _puzzleDayInput) = (solveService, puzzleDayInput);
 
         public void Run()

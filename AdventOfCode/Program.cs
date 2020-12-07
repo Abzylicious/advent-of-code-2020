@@ -14,8 +14,8 @@ namespace AdventOfCode
         public static void Main(string[] args)
         {
             using var host = CreateHost(args);
-            var adventOfCode = ActivatorUtilities.CreateInstance<AdventOfCode>(host.Services);
-            adventOfCode.Run();
+            var adventOfCodeRunner = ActivatorUtilities.CreateInstance<AdventOfCodeRunner>(host.Services);
+            adventOfCodeRunner.Run();
         }
 
         private static IHost CreateHost(string[] args) => Host.CreateDefaultBuilder(args)
@@ -27,6 +27,8 @@ namespace AdventOfCode
         {
             services.AddTransient<IPuzzleDayInput, PuzzleDayInput>();
             services.AddTransient<IConsoleNumberInput, ConsoleNumberInput>();
+            services.AddTransient<IFilePathInput, FilePathInput>();
+            services.AddTransient<IIntegerInputFileService, IntegerInputFileService>();
             services.AddTransient<ISolveService, SolveService>();
             RegisterSolvers(services);
         }
@@ -39,7 +41,7 @@ namespace AdventOfCode
 
             foreach (var solver in solvers)
             {
-                services.AddTransient(typeof(ISolver), solver.GetType());
+                services.AddTransient(typeof(ISolver), solver);
             }
         }
 

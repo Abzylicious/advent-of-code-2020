@@ -2,9 +2,11 @@
 
 namespace AdventOfCode.Inputs
 {
+    public interface IPuzzleDayInput : IInput<int> { }
+
     public class PuzzleDayInput : IPuzzleDayInput
     {
-        private readonly IInput<int> _consoleNumberInput;
+        private readonly IConsoleNumberInput _consoleNumberInput;
 
         public PuzzleDayInput(IConsoleNumberInput consoleNumberInput) => _consoleNumberInput = consoleNumberInput;
 
