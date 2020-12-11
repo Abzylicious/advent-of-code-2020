@@ -21,8 +21,12 @@ namespace AdventOfCode
             do
             {
                 var day = _puzzleDayInput.GetInput();
-                var solutions = _solveService.GetSolutions(day);
 
+                var title = _solveService.GetTitle(day);
+                if (!string.IsNullOrEmpty(title))
+                    Console.WriteLine($"\n{title}");
+
+                var solutions = _solveService.GetSolutions(day);
                 if (solutions == Enumerable.Empty<string>())
                     Console.WriteLine("There's no solution for this day yet.");
 

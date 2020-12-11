@@ -7,6 +7,7 @@ namespace AdventOfCode.Services
 {
     public interface ISolveService
     {
+        string GetTitle(int day);
         IEnumerable<string> GetSolutions(int day);
     }
 
@@ -15,6 +16,12 @@ namespace AdventOfCode.Services
         private readonly IServiceProvider _services;
 
         public SolveService(IServiceProvider services) => _services = services;
+
+        public string GetTitle(int day)
+        {
+            var solver = GetSolver(day);
+            return solver is null ? string.Empty : solver.Title;
+        }
 
         public IEnumerable<string> GetSolutions(int day)
         {
