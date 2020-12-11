@@ -2,9 +2,6 @@
 using AdventOfCode.Services;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AdventOfCode.Day01
 {
@@ -18,7 +15,6 @@ namespace AdventOfCode.Day01
             (_filePathInput, _integerInputFileService) = (filePathInput, integerInputFileService);
 
         public int Day => 1;
-
         public string Title => "--- Day 1: Report Repair ---";
 
         public void Setup()
