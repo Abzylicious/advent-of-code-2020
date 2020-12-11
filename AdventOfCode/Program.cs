@@ -29,6 +29,7 @@ namespace AdventOfCode
             services.AddTransient<IConsoleNumberInput, ConsoleNumberInput>();
             services.AddTransient<IFilePathInput, FilePathInput>();
             services.AddTransient<IIntegerInputFileService, IntegerInputFileService>();
+            services.AddTransient<ITextInputFileService, TextInputFileService>();
             services.AddTransient<ISolveService, SolveService>();
             RegisterSolvers(services);
         }
